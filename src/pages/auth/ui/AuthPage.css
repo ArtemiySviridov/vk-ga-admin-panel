@@ -1,0 +1,34 @@
+.auth-shell {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.auth-panel {
+  width: min(420px, 100%);
+}
+
+.auth-kicker {
+  margin: 0 0 4px;
+  color: #626d7a;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.auth-panel h1 {
+  margin: 0;
+  color: #000;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+@media (max-width: 620px) {
+  .auth-shell {
+    align-items: start;
+    padding: 12px;
+    padding-top: 72px;
+  }
+}

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Макет админ-панели токенов</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #222;
+      }
+
+      .app {
+        max-width: 760px;
+        margin: 0 auto;
+        background: #fff;
+        min-height: 100vh;
+      }
+
+      .panel-header {
+        padding: 16px;
+        border-bottom: 1px solid #ddd;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .group {
+        margin: 12px;
+        padding: 16px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .group-title {
+        margin: 0 0 12px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 8px;
+        align-items: end;
+        margin-bottom: 12px;
+      }
+
+      .form-item {
+        flex: 1;
+        margin-bottom: 12px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: #555;
+      }
+
+      input,
+      textarea,
+      select,
+      button {
+        box-sizing: border-box;
+        width: 100%;
+        font: inherit;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      textarea {
+        min-height: 72px;
+        resize: vertical;
+      }
+
+      button {
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 6px;
+        background: #2688eb;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .button-secondary {
+        background: #e5ebf1;
+        color: #222;
+      }
+
+      .user-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-top: 12px;
+        overflow: hidden;
+      }
+
+      .cell {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .cell:last-child {
+        border-bottom: 0;
+      }
+
+      .cell-label {
+        color: #555;
+      }
+
+      .cell-value {
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .segmented {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .segment {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-align: center;
+        background: #f7f7f7;
+      }
+
+      .segment-active {
+        border-color: #2688eb;
+        background: #e8f2ff;
+        font-weight: 700;
+      }
+
+      .operation {
+        display: grid;
+        grid-template-columns: 72px 1fr auto;
+        gap: 8px;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .operation:last-child {
+        border-bottom: 0;
+      }
+
+      .badge {
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #e8f2ff;
+        color: #1769aa;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .muted {
+        color: #777;
+        font-size: 13px;
+      }
+
+      @media (max-width: 560px) {
+        .form-row {
+          display: block;
+        }
+
+        .form-row button {
+          margin-top: 8px;
+        }
+
+        .segmented {
+          grid-template-columns: 1fr;
+        }
+
+        .operation {
+          grid-template-columns: 1fr;
+        }
+
+        .cell {
+          display: block;
+        }
+
+        .cell-value {
+          margin-top: 4px;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="panel-header">Админ-панель токенов</header>
+
+      <section class="group">
+        <h2 class="group-title">Базовые токены</h2>
+
+        <div class="form-item">
+          <label for="new-user-balance">Количество токенов для новых пользователей</label>
+          <input id="new-user-balance" type="number" value="30" />
+        </div>
+
+        <button type="button">Сохранить базовое значение</button>
+      </section>
+
+      <section class="group">
+        <h2 class="group-title">Пользователь</h2>
+
+        <div class="form-row">
+          <div class="form-item">
+            <label for="vk-user-id">VK ID пользователя</label>
+            <input id="vk-user-id" type="number" value="123456789" />
+          </div>
+
+          <button type="button">Найти</button>
+        </div>
+
+        <div class="user-card">
+          <div class="cell">
+            <div class="cell-label">Пользователь</div>
+            <div class="cell-value">#123456789</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">Баланс</div>
+            <div class="cell-value">120 токенов</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">Статус</div>
+            <div class="cell-value">Обычный</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">Последнее обновление баланса</div>
+            <div class="cell-value">27.05.2026 10:00</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="group">
+        <h2 class="group-title">Изменить баланс</h2>
+
+        <label>Операция</label>
+        <div class="segmented" aria-label="Операция изменения баланса">
+          <div class="segment segment-active">Начислить</div>
+          <div class="segment">Списать</div>
+          <div class="segment">Установить</div>
+        </div>
+
+        <div class="form-item">
+          <label for="amount">Количество токенов</label>
+          <input id="amount" type="number" value="100" />
+        </div>
+
+        <div class="form-item">
+          <label for="comment">Комментарий</label>
+          <textarea id="comment">Майское промо</textarea>
+        </div>
+
+        <button type="button">Применить изменение</button>
+      </section>
+
+      <section class="group">
+        <h2 class="group-title">Последние операции пользователя</h2>
+
+        <div class="operation">
+          <div class="badge">+100</div>
+          <div>
+            <div>Майское промо</div>
+            <div class="muted">30 → 130 · 27.05.2026 14:30</div>
+          </div>
+          <button class="button-secondary" type="button">Детали</button>
+        </div>
+
+        <div class="operation">
+          <div class="badge">-10</div>
+          <div>
+            <div>Ручная корректировка</div>
+            <div class="muted">130 → 120 · 27.05.2026 15:10</div>
+          </div>
+          <button class="button-secondary" type="button">Детали</button>
+        </div>
+
+        <div class="operation">
+          <div class="badge">=30</div>
+          <div>
+            <div>Возврат к базовому балансу</div>
+            <div class="muted">120 → 30 · 28.05.2026 09:00</div>
+          </div>
+          <button class="button-secondary" type="button">Детали</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

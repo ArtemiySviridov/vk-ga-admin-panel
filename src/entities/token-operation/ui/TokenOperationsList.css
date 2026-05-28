@@ -1,0 +1,73 @@
+.operations-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px 12px;
+}
+
+.operation-row {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #dce1e6;
+}
+
+.operation-row:last-child {
+  border-bottom: 0;
+}
+
+.operation-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.operation-add {
+  color: #3f8e4d;
+  background: #e6f4ea;
+}
+
+.operation-subtract {
+  color: #e64646;
+  background: #faebeb;
+}
+
+.operation-set {
+  color: #1769aa;
+  background: #e8f2ff;
+}
+
+.operation-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.operation-body strong {
+  color: #000;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.operation-body span,
+.operation-body small {
+  color: #626d7a;
+  font-size: 13px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  .operation-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 10px;
+  }
+}

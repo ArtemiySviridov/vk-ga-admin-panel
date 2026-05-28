@@ -1,0 +1,1354 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "VK Mini App Backend",
+    "description": "Backend для анализа сообществ и генерации контента",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/v1/analyzer/{group_id}": {
+      "get": {
+        "tags": [
+          "Анализ сообществ"
+        ],
+        "summary": "Analyze Group",
+        "operationId": "analyze_group_api_v1_analyzer__group_id__get",
+        "parameters": [
+          {
+            "name": "group_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Group Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/analyzer/test-token": {
+      "get": {
+        "tags": [
+          "Анализ сообществ"
+        ],
+        "summary": "Test Token",
+        "operationId": "test_token_api_v1_analyzer_test_token_get",
+        "parameters": [
+          {
+            "name": "X-VK-Launch-Params",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Vk-Launch-Params"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/balance": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Get Balance",
+        "operationId": "get_balance_api_v1_generator_balance_get",
+        "parameters": [
+          {
+            "name": "X-VK-Launch-Params",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Vk-Launch-Params"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/tasks": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Get Tasks",
+        "operationId": "get_tasks_api_v1_generator_tasks_get",
+        "parameters": [
+          {
+            "name": "X-VK-Launch-Params",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Vk-Launch-Params"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/tasks/{task_id}": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Get Task",
+        "operationId": "get_task_api_v1_generator_tasks__task_id__get",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/generate": {
+      "post": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Generate",
+        "operationId": "generate_api_v1_generator_generate_post",
+        "parameters": [
+          {
+            "name": "X-VK-Launch-Params",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Vk-Launch-Params"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_generate_api_v1_generator_generate_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/history": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Get History",
+        "operationId": "get_history_api_v1_generator_history_get",
+        "parameters": [
+          {
+            "name": "task_type",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": [
+                "posts",
+                "images"
+              ],
+              "type": "string",
+              "title": "Task Type"
+            }
+          },
+          {
+            "name": "X-VK-Launch-Params",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Vk-Launch-Params"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/costs": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Get Generation Costs",
+        "operationId": "get_generation_costs_api_v1_generator_costs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Update Generation Costs",
+        "operationId": "update_generation_costs_api_v1_generator_costs_patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCostsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/generator/balance-fake": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Fake Get Balance",
+        "operationId": "fake_get_balance_api_v1_generator_balance_fake_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/tasks-fake": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Fake Get Tasks",
+        "operationId": "fake_get_tasks_api_v1_generator_tasks_fake_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/generate-fake": {
+      "post": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Fake Generate",
+        "operationId": "fake_generate_api_v1_generator_generate_fake_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/generator/history-fake": {
+      "get": {
+        "tags": [
+          "Генерация контента"
+        ],
+        "summary": "Fake Get History",
+        "operationId": "fake_get_history_api_v1_generator_history_fake_get",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": [
+                "posts",
+                "images"
+              ],
+              "type": "string",
+              "title": "Type"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chat": {
+      "post": {
+        "tags": [
+          "Чат-бот группы"
+        ],
+        "summary": "Vk Callback",
+        "operationId": "vk_callback_api_v1_chat_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/login": {
+      "post": {
+        "tags": [
+          "Управление"
+        ],
+        "summary": "Admin Login",
+        "operationId": "admin_login_api_v1_admin_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminLoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminLoginResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/generation-settings": {
+      "get": {
+        "tags": [
+          "Управление"
+        ],
+        "summary": "Get Settings",
+        "operationId": "get_settings_api_v1_admin_generation_settings_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationSettingsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Управление"
+        ],
+        "summary": "Update Settings",
+        "operationId": "update_settings_api_v1_admin_generation_settings_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerationSettingsUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerationSettingsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/admin/users": {
+      "get": {
+        "tags": [
+          "Управление"
+        ],
+        "summary": "Get Users",
+        "operationId": "get_users_api_v1_admin_users_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "default": "desc",
+              "title": "Sort Order"
+            }
+          },
+          {
+            "name": "is_donut",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Is Donut"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Search"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/users/{user_id}": {
+      "get": {
+        "tags": [
+          "Управление"
+        ],
+        "summary": "Get User",
+        "operationId": "get_user_api_v1_admin_users__user_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "User Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDetailsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/admin/users/{user_id}/balance": {
+      "post": {
+        "tags": [
+          "Управление"
+        ],
+        "summary": "Update User Balance",
+        "operationId": "update_user_balance_api_v1_admin_users__user_id__balance_post",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "User Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserBalanceUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserBalanceUpdateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdminLoginRequest": {
+        "properties": {
+          "login": {
+            "type": "string",
+            "title": "Login"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "login",
+          "password"
+        ],
+        "title": "AdminLoginRequest"
+      },
+      "AdminLoginResponse": {
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "title": "Access Token"
+          }
+        },
+        "type": "object",
+        "required": [
+          "access_token"
+        ],
+        "title": "AdminLoginResponse"
+      },
+      "Body_generate_api_v1_generator_generate_post": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "post"
+            ],
+            "title": "Type"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "aspect_ratio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aspect Ratio"
+          },
+          "reference_image": {
+            "anyOf": [
+              {
+                "type": "string",
+                "contentMediaType": "application/octet-stream"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reference Image"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "prompt"
+        ],
+        "title": "Body_generate_api_v1_generator_generate_post"
+      },
+      "GenerateRequest": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "post"
+            ],
+            "title": "Type"
+          },
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "aspect_ratio": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aspect Ratio"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "prompt"
+        ],
+        "title": "GenerateRequest"
+      },
+      "GenerationSettingsResponse": {
+        "properties": {
+          "baseTokens": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Basetokens"
+          },
+          "donutTokens": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Donuttokens"
+          },
+          "postCost": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Postcost"
+          },
+          "imageCost": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Imagecost"
+          }
+        },
+        "type": "object",
+        "required": [
+          "baseTokens",
+          "donutTokens",
+          "postCost",
+          "imageCost"
+        ],
+        "title": "GenerationSettingsResponse"
+      },
+      "GenerationSettingsUpdateRequest": {
+        "properties": {
+          "baseTokens": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Basetokens"
+          },
+          "donutTokens": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Donuttokens"
+          },
+          "postCost": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Postcost"
+          },
+          "imageCost": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Imagecost"
+          }
+        },
+        "type": "object",
+        "required": [
+          "baseTokens",
+          "donutTokens",
+          "postCost",
+          "imageCost"
+        ],
+        "title": "GenerationSettingsUpdateRequest"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "LogsListItem": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "increase",
+              "decrease",
+              "set"
+            ],
+            "title": "Action"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Amount"
+          },
+          "change": {
+            "type": "string",
+            "title": "Change"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comment"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Datetime"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "action",
+          "amount",
+          "change",
+          "datetime"
+        ],
+        "title": "LogsListItem"
+      },
+      "UpdateCostsRequest": {
+        "properties": {
+          "image": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Image"
+          },
+          "post": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "title": "Post"
+          }
+        },
+        "type": "object",
+        "required": [
+          "image",
+          "post"
+        ],
+        "title": "UpdateCostsRequest"
+      },
+      "UserBalanceUpdateRequest": {
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "increase",
+              "decrease",
+              "set"
+            ],
+            "title": "Action"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 0,
+            "title": "Amount"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comment"
+          }
+        },
+        "type": "object",
+        "required": [
+          "action",
+          "amount"
+        ],
+        "title": "UserBalanceUpdateRequest"
+      },
+      "UserBalanceUpdateResponse": {
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "title": "Balance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "balance"
+        ],
+        "title": "UserBalanceUpdateResponse"
+      },
+      "UserDetailsResponse": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "avatar": {
+            "type": "string",
+            "title": "Avatar"
+          },
+          "fullName": {
+            "type": "string",
+            "title": "Fullname"
+          },
+          "registeredAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Registeredat"
+          },
+          "isDonut": {
+            "type": "boolean",
+            "title": "Isdonut"
+          },
+          "balance": {
+            "type": "integer",
+            "title": "Balance"
+          },
+          "lastBalanceResetAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Lastbalanceresetat"
+          },
+          "logs": {
+            "items": {
+              "$ref": "#/components/schemas/LogsListItem"
+            },
+            "type": "array",
+            "title": "Logs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "avatar",
+          "fullName",
+          "registeredAt",
+          "isDonut",
+          "balance",
+          "lastBalanceResetAt",
+          "logs"
+        ],
+        "title": "UserDetailsResponse"
+      },
+      "UsersListItem": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "avatar": {
+            "type": "string",
+            "title": "Avatar"
+          },
+          "fullName": {
+            "type": "string",
+            "title": "Fullname"
+          },
+          "registeredAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Registeredat"
+          },
+          "isDonut": {
+            "type": "boolean",
+            "title": "Isdonut"
+          },
+          "balance": {
+            "type": "integer",
+            "title": "Balance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "avatar",
+          "fullName",
+          "registeredAt",
+          "isDonut",
+          "balance"
+        ],
+        "title": "UsersListItem"
+      },
+      "UsersListMeta": {
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "hasMore": {
+            "type": "boolean",
+            "title": "Hasmore"
+          }
+        },
+        "type": "object",
+        "required": [
+          "limit",
+          "offset",
+          "hasMore"
+        ],
+        "title": "UsersListMeta"
+      },
+      "UsersListResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/UsersListItem"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/UsersListMeta"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "meta"
+        ],
+        "title": "UsersListResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}ы

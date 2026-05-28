@@ -1,0 +1,82 @@
+.profile-summary {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+}
+
+.profile-summary h2 {
+  margin: 0 0 8px;
+  color: #000;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  min-height: 26px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-regular {
+  color: #626d7a;
+  background: #f0f2f5;
+}
+
+.status-subscribed {
+  color: #3f8e4d;
+  background: #e6f4ea;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 0 18px 18px;
+}
+
+.info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f7f8fa;
+}
+
+.info-cell span {
+  color: #626d7a;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.info-cell strong {
+  color: #000;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  .profile-summary {
+    align-items: flex-start;
+    padding-inline: 12px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
